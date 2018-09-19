@@ -1,1 +1,5 @@
-# eos-iphone-cold-wallet
+# iPhone Cold Wallet for EOS
+
+![](assets/overview.png?raw=true)
+
+
