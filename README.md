@@ -8,6 +8,20 @@ Any Desktop wallet can use it as a kind of a hardware wallet. (see above overvie
 Stay tuned...
 
 
+## EOSKit framework
 
+iPhone Cold Wallet for EOS will use [EOSKit framework] (https://github.com/https://github.com/mobile-wallet-sdk/), which is currently under development.
+
+
+## How to contribute
+
+tbd.
+
+## License
+
+Open Soure tbd.
+
+## Donations
+Send lumens to: GANSYJ64BTHYFM6BAJEWXYLVSZVSHYZFPW4DIQDWJL5BOT6O6GUE7JM5
 
 eosmobilesdk
