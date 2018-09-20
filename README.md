@@ -1,4 +1,4 @@
-# iPhone Cold Wallet for EOS
+## iPhone Cold Wallet for EOS
 
 ![](assets/overview.png?raw=true)
 
