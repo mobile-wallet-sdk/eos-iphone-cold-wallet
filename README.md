@@ -22,6 +22,5 @@ tbd.
 Open Soure tbd.
 
 ## Donations
-Send lumens to: GANSYJ64BTHYFM6BAJEWXYLVSZVSHYZFPW4DIQDWJL5BOT6O6GUE7JM5
 
-eosmobilesdk
+Tp donate send EOS to 'eosmobilesdk'
