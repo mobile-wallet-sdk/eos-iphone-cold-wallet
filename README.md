@@ -12,7 +12,6 @@ Stay tuned...
 
 iPhone Cold Wallet for EOS will use [EOSKit framework](https://github.com/mobile-wallet-sdk/eosmobilesdk-ios), which is currently under development.
 
-
 ## How to contribute
 
 tbd.
@@ -23,4 +22,4 @@ Open Soure tbd.
 
 ## Donations
 
-Tp donate send EOS to 'eosmobilesdk'
+To donate send EOS to [eosmobilesdk](https://www.bloks.io/account/eosmobilesdk)
