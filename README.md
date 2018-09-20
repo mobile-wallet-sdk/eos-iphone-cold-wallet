@@ -10,7 +10,7 @@ Stay tuned...
 
 ## EOSKit framework
 
-iPhone Cold Wallet for EOS will use [EOSKit framework](https://github.com/mobile-wallet-sdk/), which is currently under development.
+iPhone Cold Wallet for EOS will use [EOSKit framework](https://github.com/mobile-wallet-sdk/eosmobilesdk-ios), which is currently under development.
 
 
 ## How to contribute
