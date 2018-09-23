@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  EOS-Wallet-Client
 //
-//  Created by Dieter Saken on 23.09.18.
-//  Copyright © 2018 Dieter Saken. All rights reserved.
-//
 
 import Cocoa
 
