@@ -18,6 +18,8 @@ Any Desktop wallet can use it as a kind of a hardware wallet. (see above overvie
 * Secure Enclave transcations signing
 * Test client to push signed transaction
 
+stay tuned
+
 ## EOSKit framework
 
 iPhone Cold Wallet for EOS will use [EOSKit framework](https://github.com/mobile-wallet-sdk/eosmobilesdk-ios), which is currently under development.
