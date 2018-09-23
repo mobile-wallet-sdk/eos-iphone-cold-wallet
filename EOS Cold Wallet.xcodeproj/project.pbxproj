@@ -15,6 +15,12 @@
 		E8C8BE9F2153C0A700C7AB6C /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BE9E2153C0A700C7AB6C /* AddAccountViewController.swift */; };
 		E8C8BEA22153C10E00C7AB6C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEA02153C10E00C7AB6C /* AccountViewController.swift */; };
 		E8C8BEA32153C10E00C7AB6C /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C8BEA12153C10E00C7AB6C /* AccountViewController.xib */; };
+		E8C8BEA52157A58400C7AB6C /* BlePeripheralRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEA42157A58100C7AB6C /* BlePeripheralRole.swift */; };
+		E8C8BEAF2157DE3F00C7AB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEAE2157DE3F00C7AB6C /* AppDelegate.swift */; };
+		E8C8BEB12157DE3F00C7AB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEB02157DE3F00C7AB6C /* ViewController.swift */; };
+		E8C8BEB32157DE4200C7AB6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C8BEB22157DE4200C7AB6C /* Assets.xcassets */; };
+		E8C8BEB62157DE4200C7AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C8BEB42157DE4200C7AB6C /* Main.storyboard */; };
+		E8C8BEBE2157E06300C7AB6C /* BleCentralRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEBD2157E06300C7AB6C /* BleCentralRole.swift */; };
 		F6FFA57647A63ABE8B262F95 /* Pods_EOS_Cold_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1037C3C6694D40EC0F9E3AAE /* Pods_EOS_Cold_Wallet.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +38,15 @@
 		E8C8BE9E2153C0A700C7AB6C /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		E8C8BEA02153C10E00C7AB6C /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E8C8BEA12153C10E00C7AB6C /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		E8C8BEA42157A58100C7AB6C /* BlePeripheralRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlePeripheralRole.swift; sourceTree = "<group>"; };
+		E8C8BEAC2157DE3F00C7AB6C /* EOS-Wallet-Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EOS-Wallet-Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8C8BEAE2157DE3F00C7AB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E8C8BEB02157DE3F00C7AB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8C8BEB22157DE4200C7AB6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8C8BEB52157DE4200C7AB6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E8C8BEB72157DE4200C7AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8C8BEB82157DE4200C7AB6C /* EOS_Wallet_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EOS_Wallet_Client.entitlements; sourceTree = "<group>"; };
+		E8C8BEBD2157E06300C7AB6C /* BleCentralRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleCentralRole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +55,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FFA57647A63ABE8B262F95 /* Pods_EOS_Cold_Wallet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8C8BEA92157DE3F00C7AB6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C8BE4B2152694100C7AB6C /* EOS Cold Wallet */,
+				E8C8BEAD2157DE3F00C7AB6C /* EOS-Wallet-Client */,
 				E8C8BE4A2152694100C7AB6C /* Products */,
 				09EB334E6B4689B2CCD5F7D9 /* Pods */,
 				3A51EB788D056501D6354961 /* Frameworks */,
@@ -77,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C8BE492152694100C7AB6C /* EOS Cold Wallet.app */,
+				E8C8BEAC2157DE3F00C7AB6C /* EOS-Wallet-Client.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +112,7 @@
 				E8C8BEA02153C10E00C7AB6C /* AccountViewController.swift */,
 				E8C8BE4E2152694100C7AB6C /* PageViewController.swift */,
 				E8C8BE9E2153C0A700C7AB6C /* AddAccountViewController.swift */,
+				E8C8BEA42157A58100C7AB6C /* BlePeripheralRole.swift */,
 				E8C8BE542152694100C7AB6C /* Main.storyboard */,
 				E8C8BEA12153C10E00C7AB6C /* AccountViewController.xib */,
 				E8C8BE572152694400C7AB6C /* Assets.xcassets */,
@@ -95,6 +120,20 @@
 				E8C8BE5C2152694400C7AB6C /* Info.plist */,
 			);
 			path = "EOS Cold Wallet";
+			sourceTree = "<group>";
+		};
+		E8C8BEAD2157DE3F00C7AB6C /* EOS-Wallet-Client */ = {
+			isa = PBXGroup;
+			children = (
+				E8C8BEAE2157DE3F00C7AB6C /* AppDelegate.swift */,
+				E8C8BEBD2157E06300C7AB6C /* BleCentralRole.swift */,
+				E8C8BEB02157DE3F00C7AB6C /* ViewController.swift */,
+				E8C8BEB22157DE4200C7AB6C /* Assets.xcassets */,
+				E8C8BEB42157DE4200C7AB6C /* Main.storyboard */,
+				E8C8BEB72157DE4200C7AB6C /* Info.plist */,
+				E8C8BEB82157DE4200C7AB6C /* EOS_Wallet_Client.entitlements */,
+			);
+			path = "EOS-Wallet-Client";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +158,23 @@
 			productReference = E8C8BE492152694100C7AB6C /* EOS Cold Wallet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E8C8BEAB2157DE3F00C7AB6C /* EOS-Wallet-Client */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8C8BEB92157DE4200C7AB6C /* Build configuration list for PBXNativeTarget "EOS-Wallet-Client" */;
+			buildPhases = (
+				E8C8BEA82157DE3F00C7AB6C /* Sources */,
+				E8C8BEA92157DE3F00C7AB6C /* Frameworks */,
+				E8C8BEAA2157DE3F00C7AB6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EOS-Wallet-Client";
+			productName = "EOS-Wallet-Client";
+			productReference = E8C8BEAC2157DE3F00C7AB6C /* EOS-Wallet-Client.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,6 +186,9 @@
 				ORGANIZATIONNAME = "Dieter Saken";
 				TargetAttributes = {
 					E8C8BE482152694100C7AB6C = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					E8C8BEAB2157DE3F00C7AB6C = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -148,6 +207,7 @@
 			projectRoot = "";
 			targets = (
 				E8C8BE482152694100C7AB6C /* EOS Cold Wallet */,
+				E8C8BEAB2157DE3F00C7AB6C /* EOS-Wallet-Client */,
 			);
 		};
 /* End PBXProject section */
@@ -161,6 +221,15 @@
 				E8C8BE582152694400C7AB6C /* Assets.xcassets in Resources */,
 				E8C8BEA32153C10E00C7AB6C /* AccountViewController.xib in Resources */,
 				E8C8BE562152694100C7AB6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8C8BEAA2157DE3F00C7AB6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C8BEB32157DE4200C7AB6C /* Assets.xcassets in Resources */,
+				E8C8BEB62157DE4200C7AB6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +282,18 @@
 				E8C8BE4F2152694100C7AB6C /* PageViewController.swift in Sources */,
 				E8C8BE9F2153C0A700C7AB6C /* AddAccountViewController.swift in Sources */,
 				E8C8BEA22153C10E00C7AB6C /* AccountViewController.swift in Sources */,
+				E8C8BEA52157A58400C7AB6C /* BlePeripheralRole.swift in Sources */,
 				E8C8BE4D2152694100C7AB6C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8C8BEA82157DE3F00C7AB6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8C8BEBE2157E06300C7AB6C /* BleCentralRole.swift in Sources */,
+				E8C8BEB12157DE3F00C7AB6C /* ViewController.swift in Sources */,
+				E8C8BEAF2157DE3F00C7AB6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +314,14 @@
 				E8C8BE5A2152694400C7AB6C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E8C8BEB42157DE4200C7AB6C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8C8BEB52157DE4200C7AB6C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -393,6 +481,50 @@
 			};
 			name = Release;
 		};
+		E8C8BEBA2157DE4200C7AB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "EOS-Wallet-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.wallet-sdk.eos..EOS-Wallet-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		E8C8BEBB2157DE4200C7AB6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "EOS-Wallet-Client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "de.wallet-sdk.eos..EOS-Wallet-Client";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,6 +542,15 @@
 			buildConfigurations = (
 				E8C8BE602152694400C7AB6C /* Debug */,
 				E8C8BE612152694400C7AB6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8C8BEB92157DE4200C7AB6C /* Build configuration list for PBXNativeTarget "EOS-Wallet-Client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8C8BEBA2157DE4200C7AB6C /* Debug */,
+				E8C8BEBB2157DE4200C7AB6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,9 +9,11 @@ class PageViewController: UIPageViewController {
     
     var pageData =  [] as [String]
     var label : UILabel!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(displayP3Red: 0.9, green:  0.9, blue:  0.9, alpha: 1)
         label = UILabel(frame: CGRect(x: 0, y: view.bounds.height * 0.5 - 30 - 48, width: view.bounds.width, height: 60))
         label.text = "No EOS accounts installed.\nAdd one or more accounts."
         label.textAlignment = .center
@@ -35,6 +37,9 @@ class PageViewController: UIPageViewController {
                 accountViewController.dataObject = self.pageData[0]
                 let viewControllers = [accountViewController]
                 self.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
+            } else {
+                setViewControllers([viewControllerAtIndex(pageData.count - 1)!], direction: .forward, animated: true, completion: nil)
+
             }
             self.delegate = self
             self.dataSource = self
