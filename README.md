@@ -5,8 +5,18 @@
 This project will create a cold/hardware wallet using the iPhone Secure Enclave.
 Any Desktop wallet can use it as a kind of a hardware wallet. (see above overview picture)
 
-Stay tuned...
 
+## Current state
+
+* iOS Wallet App 
+* Mac OS Test client
+* Simple BLE communication
+
+## next steps
+
+* Secure Enclave private/public key generation
+* Secure Enclave transcations signing
+* Test client to push signed transaction
 
 ## EOSKit framework
 
