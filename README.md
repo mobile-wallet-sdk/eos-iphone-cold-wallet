@@ -3,7 +3,7 @@
 ![](assets/overview.png?raw=true)
 
 This project will create a cold/hardware wallet using the iPhone Secure Enclave.
-Any Desktop wallet can use it as a kind of a hardware wallet. (see above overview picture)
+Any Desktop wallet can use it by using Bluetooth LE communication as a real cold wallet. (see above overview picture)
 
 
 ## Current state
