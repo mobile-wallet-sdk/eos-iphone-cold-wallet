@@ -6,4 +6,5 @@ target 'EOS Cold Wallet' do
   use_frameworks!
 
   # Pods for EOS Cold Wallet
+
 end
