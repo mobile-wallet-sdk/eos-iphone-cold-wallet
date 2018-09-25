@@ -2,9 +2,6 @@
 //  Wallet.swift
 //  EOS Cold Wallet
 //
-//  Created by Dieter Saken on 25.09.18.
-//  Copyright © 2018 Dieter Saken. All rights reserved.
-//
 
 import Foundation
 
