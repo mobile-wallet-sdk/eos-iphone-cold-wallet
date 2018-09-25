@@ -66,14 +66,14 @@ extension BlePeripheralRole: CBPeripheralManagerDelegate {
             type: readCharacteristicUUID,
             properties: CBCharacteristicProperties.notify,
             value: nil,
-            permissions: CBAttributePermissions.readable
+            permissions: [.readable, .readEncryptionRequired]
         )
         
         writeCharacteristic = CBMutableCharacteristic(
             type: writeCharacteristicUUID,
             properties: CBCharacteristicProperties.write,
             value: nil,
-            permissions: CBAttributePermissions.writeable
+            permissions: [.writeable, .writeEncryptionRequired]
         )
         
         // Then the service

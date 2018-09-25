@@ -7,8 +7,9 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
-    var pageData =  [] as [String]
+    var accounts =  [] as [String]
     var label : UILabel!
+    let wallet : Wallet = TestWallet()
 
     
     override func viewDidLoad() {
@@ -23,22 +24,26 @@ class PageViewController: UIPageViewController {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = .lightGray
         appearance.currentPageIndicatorTintColor = .green
-        showAccounts()
+        
+        wallet.getAccounts() { accounts in
+            self.accounts = accounts
+            self.showAccounts()
+        }
         
     }
     
     func showAccounts() {
-        if pageData.count > 0 {
+        if accounts.count > 0 {
             label.text = nil
             self.delegate = nil
             self.dataSource = nil
             if self.viewControllers?.count  == 0 {
                 let accountViewController = AccountViewController(nibName: "AccountViewController", bundle: nil)
-                accountViewController.dataObject = self.pageData[0]
+                accountViewController.account = self.accounts[0]
                 let viewControllers = [accountViewController]
                 self.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
             } else {
-                setViewControllers([viewControllerAtIndex(pageData.count - 1)!], direction: .forward, animated: true, completion: nil)
+                setViewControllers([viewControllerAtIndex(accounts.count - 1)!], direction: .forward, animated: true, completion: nil)
 
             }
             self.delegate = self
@@ -48,21 +53,21 @@ class PageViewController: UIPageViewController {
     
     func viewControllerAtIndex(_ index: Int) -> AccountViewController? {
         // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (self.accounts.count == 0) || (index >= self.accounts.count) {
             return nil
         }
         
         // Create a new view controller and pass suitable data.
         let accountViewController = AccountViewController(nibName: "AccountViewController", bundle: nil)
         
-        accountViewController.dataObject = self.pageData[index]
+        accountViewController.account = self.accounts[index]
         return accountViewController
     }
     
     func indexOfViewController(_ viewController: AccountViewController) -> Int {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        return pageData.index(of: viewController.dataObject) ?? NSNotFound
+        return accounts.index(of: viewController.account) ?? NSNotFound
     }
 }
 
@@ -135,7 +140,7 @@ extension PageViewController: UIPageViewControllerDataSource {
         }
         
         index += 1
-        if index == self.pageData.count {
+        if index == self.accounts.count {
             return nil
         }
 
@@ -144,7 +149,7 @@ extension PageViewController: UIPageViewControllerDataSource {
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         print("presentationCount")
-        return pageData.count
+        return accounts.count
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {

@@ -22,7 +22,7 @@ class AddAccountViewController: UIViewController {
         if let nc = presentingViewController as? UINavigationController {
         if let pc = nc.viewControllers[0] as? PageViewController {
             AddAccountViewController.aid += 1
-            pc.pageData.append(accountTextField.text!)
+            pc.accounts.append(accountTextField.text!)
             pc.showAccounts()
         }
         }

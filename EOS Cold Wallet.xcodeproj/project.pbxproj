@@ -21,6 +21,7 @@
 		E8C8BEB32157DE4200C7AB6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C8BEB22157DE4200C7AB6C /* Assets.xcassets */; };
 		E8C8BEB62157DE4200C7AB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C8BEB42157DE4200C7AB6C /* Main.storyboard */; };
 		E8C8BEBE2157E06300C7AB6C /* BleCentralRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8BEBD2157E06300C7AB6C /* BleCentralRole.swift */; };
+		E8E60AEC215A81520012E768 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E60AEB215A81520012E768 /* Wallet.swift */; };
 		F6FFA57647A63ABE8B262F95 /* Pods_EOS_Cold_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1037C3C6694D40EC0F9E3AAE /* Pods_EOS_Cold_Wallet.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		E8C8BEB72157DE4200C7AB6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C8BEB82157DE4200C7AB6C /* EOS_Wallet_Client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EOS_Wallet_Client.entitlements; sourceTree = "<group>"; };
 		E8C8BEBD2157E06300C7AB6C /* BleCentralRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleCentralRole.swift; sourceTree = "<group>"; };
+		E8E60AEB215A81520012E768 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				E8C8BE572152694400C7AB6C /* Assets.xcassets */,
 				E8C8BE592152694400C7AB6C /* LaunchScreen.storyboard */,
 				E8C8BE5C2152694400C7AB6C /* Info.plist */,
+				E8E60AEB215A81520012E768 /* Wallet.swift */,
 			);
 			path = "EOS Cold Wallet";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E60AEC215A81520012E768 /* Wallet.swift in Sources */,
 				E8C8BE4F2152694100C7AB6C /* PageViewController.swift in Sources */,
 				E8C8BE9F2153C0A700C7AB6C /* AddAccountViewController.swift in Sources */,
 				E8C8BEA22153C10E00C7AB6C /* AccountViewController.swift in Sources */,
