@@ -2,16 +2,22 @@ import Foundation
 import CoreBluetooth
 
 let NOTIFY_MTU = 20
-let TRANSFER_SERVICE_UUID = "E20A39F4-73F5-4BC4-A12F-17D1AD666661"
-let WRITE_CHARACTERISTIC_UUID = "08590F7E-DB05-467E-8757-72F6F66666D4"
-let READ_CHARACTERISTIC_UUID = "08590F7E-DB05-467E-8757-72F6F66666D5"
+let TRANSFER_SERVICE_UUID = "de.wallet-sdk.eos"
+let WRITE_CHARACTERISTIC_UUID = "write"
+let READ_CHARACTERISTIC_UUID = "read"
 
-let transferServiceUUID = CBUUID(string: TRANSFER_SERVICE_UUID)
-let writeCharacteristicUUID = CBUUID(string: WRITE_CHARACTERISTIC_UUID)
-let readCharacteristicUUID = CBUUID(string: READ_CHARACTERISTIC_UUID)
+
+let transferServiceUUID = "de.wallet-sdk.eos".cbuuid()
+let signatureCharacteristicUUID = TRANSFER_SERVICE_UUID.cbuuid(extend: Channel.signature.rawValue)
+let accountCharacteristicUUID = TRANSFER_SERVICE_UUID.cbuuid(extend: Channel.account.rawValue )
+let digestCharacteristicUUID = TRANSFER_SERVICE_UUID.cbuuid(extend: Channel.digest.rawValue)
+
+
 
 protocol SimpleBluetoothIODelegate: class {
-    func simpleBluetoothIO(central: BleCentralRole, didReceiveValue value: Data)
+    func simpleBluetoothIO(central: BleCentralRole, didReceiveValue value: Data, channel: Channel)
+    func disconnect(central: BleCentralRole)
+
 }
 
 
@@ -21,8 +27,8 @@ class BleCentralRole: NSObject {
     var centralManager: CBCentralManager!
     var connectedPeripheral: CBPeripheral?
     var targetService: CBService?
-    var writableCharacteristic: CBCharacteristic?
-    var readableCharacteristic: CBCharacteristic?
+    var digestCharacteristic: CBCharacteristic?
+
     var receivedData = Data()
 
     init(delegate: SimpleBluetoothIODelegate?) {
@@ -31,13 +37,19 @@ class BleCentralRole: NSObject {
         super.init()
         
         centralManager = CBCentralManager(delegate: self, queue: nil)
+        
+        print("account: " + accountCharacteristicUUID.uuidString)
+        print("signature: " + signatureCharacteristicUUID.uuidString)
+        print("digest: " + digestCharacteristicUUID.uuidString)
+
     }
     
     func writeValue(data: Data) {
-        guard let peripheral = connectedPeripheral, let characteristic = writableCharacteristic else {
+        guard let peripheral = connectedPeripheral, let characteristic = digestCharacteristic else {
             return
         }
-        
+        print("write: " + getChannel(characteristic: characteristic).rawValue)
+
         peripheral.writeValue(data, for: characteristic, type: .withResponse)
     }
     
@@ -85,51 +97,69 @@ extension BleCentralRole: CBPeripheralDelegate {
 
     }
     
-    
+    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        print("didModifyServices")
+        delegate?.disconnect(central: self)
+        centralManager.cancelPeripheralConnection(peripheral)
+        centralManager.scanForPeripherals(withServices: [transferServiceUUID], options: nil)
+        
+
+    }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard let characteristics = service.characteristics else {
             return
         }
-        print("didDiscoverCharacteristicsFor")
 
         for characteristic in characteristics {
-            if characteristic.properties.contains(.write) || characteristic.properties.contains(.writeWithoutResponse) {
-                writableCharacteristic = characteristic
-                print("writableCharacteristic: \(characteristic.uuid.uuidString)")
-
-            } else if characteristic.properties.contains(.notify) {
-                print("readableCharacteristic \(characteristic.uuid)")
-                readableCharacteristic = characteristic
+            print("didDiscoverCharacteristicsFor " + getChannel(characteristic: characteristic).rawValue)
+            if Channel.digest == getChannel(characteristic: characteristic) {
+                digestCharacteristic = characteristic
+            }
+            if characteristic.properties.contains(.notify) {
+                print("subscribe: " + getChannel(characteristic: characteristic).rawValue)
                 peripheral.setNotifyValue(true, for: characteristic)
             }
+            
         }
+
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("didWriteValueFor")
+        print("didWriteValueFor: " + getChannel(characteristic: characteristic).rawValue)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        print("didUpdateValue")
 
         guard let data = characteristic.value, let delegate = delegate else {
             return
         }
-        // print("didUpdateValueFor \(characteristic.uuid.uuidString): \( String(data: data, encoding: .utf8) ?? "")" )
+        let channel = getChannel(characteristic: characteristic)
+        print("didUpdateValue: " +  channel.rawValue)
 
         if(data.count > 0) {
             receivedData.append(data)
         } else {
-            print("Message was:  \( String(data: receivedData, encoding: .utf8) ?? "")" )
-            // let max = peripheral.maximumWriteValueLength(for: CBCharacteristicWriteType.withResponse)
-            //let ok = Data(bytes: String(format: "OK %d", max).bytes)
-            delegate.simpleBluetoothIO(central: self, didReceiveValue: receivedData)
+            print("Message was:  \( String(data: receivedData, encoding: .utf8) ?? "") " )
+            delegate.simpleBluetoothIO(central: self, didReceiveValue: receivedData, channel: channel)
             receivedData = Data()
-            //peripheral.writeValue(ok, for: writableCharacteristic!, type: .withResponse)
         }
 
 
+    }
+    
+    private func getChannel(characteristic: CBCharacteristic) -> Channel {
+        let key =  characteristic.uuid.uuidString;
+        var response : Channel = .account
+        
+        if key == accountCharacteristicUUID.uuidString {
+            response = .account
+        } else if key == signatureCharacteristicUUID.uuidString {
+            response = .signature
+        } else if key == digestCharacteristicUUID.uuidString {
+            response = .digest
+        }
+        return response
     }
     
 

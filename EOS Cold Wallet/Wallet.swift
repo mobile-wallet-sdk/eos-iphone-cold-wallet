@@ -25,13 +25,13 @@ struct TestWallet: Wallet {
     
     func getPublicKey(account: String, closure: @escaping (String) -> Void) {
         DispatchQueue.main.async {
-            closure("PUB_R1_blablabla")
+            closure("PUB_R1_6ngCQQk317Kegy6MFEsxBjdn2stdeTsRTtZ9F6PVfpMbvjy3vC")
         }
     }
     
     func sign(data: Data, closure: @escaping (String) -> Void) {
         DispatchQueue.main.async {
-            closure("SIG_R1_blablabla")
+            closure("SIG_R1_Kq8hC5cAxCaAqS1gG311LgkP5cEoG2y3wsfrtmVvrZZxgJ4pAmF2torUQCVxktRdh3hQUcaMjKHLMj26wTu73Q6DTZHJhK")
         }
     }
 }
